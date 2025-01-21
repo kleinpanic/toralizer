@@ -9,7 +9,6 @@
 #include <sys/socket.h> 
 #include <arpa/inet.h>
 #include <netinet/in.h>
-#include <dlfcn.h>
 
 #define PROXYIP       "127.0.0.1"
 #define PROXYPORT     9050  /* Default Tor SOCKS port */ 
@@ -47,8 +46,8 @@ typedef struct proxy_response {
 
 //int perform_socks5_handshake(int sockfd, const struct sockaddr *dest_addr, socklen_t addrlen);
 
-Req *request(struct sockaddr_in *);
-int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
+Req *request(const char *dstip, const int dstport);
+int main(int,char**);
 
 #endif /* TORALIZE_H */
 

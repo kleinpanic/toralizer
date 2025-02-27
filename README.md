@@ -315,7 +315,7 @@ of this software and associated documentation files...
 
 1. **Legal Compliance**: The Tor network and usage of anonymizing software may be regulated or restricted in certain jurisdictions. Ensure you comply with local laws and regulations.
 2. **Not Bulletproof**: Simply routing traffic through Tor does **not** guarantee perfect anonymity. Browser fingerprinting, DNS leaks, misconfigurations, or application-level data (e.g., cookies) can still deanonymize you.
-3. **Use at Your Own Risk**: The authors/contributors of Toralizer are not liable for any misuse or damages arising from its usage.
+3. **Use at Your Own Risk**: I am not liable for any misuse or damages arising from its usage.
 
 ---
 

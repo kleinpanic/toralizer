@@ -65,16 +65,21 @@ clean:
 # Install to system locations (use sudo if needed)
 install: all
 	@echo "Installing to $(PREFIX)..."
+	# install library under libdir
 	install -d $(DESTDIR)$(LIBDIR)
 	install -m 755 $(BUILD_DIR)/$(SO_NAME) $(DESTDIR)$(LIBDIR)/
+	# also install the .so next to the wrapper so script can find it
 	install -d $(DESTDIR)$(BINDIR)
+	install -m 755 $(BUILD_DIR)/$(SO_NAME) $(DESTDIR)$(BINDIR)/toralizer.so
+	# install wrapper script
 	install -m 755 $(BUILD_DIR)/$(SCRIPT_NAME) $(DESTDIR)$(BINDIR)/toralize
-	@echo "Installed library to $(LIBDIR) and wrapper to $(BINDIR)/toralize"
+	@echo "Installed library to $(LIBDIR) and $(BINDIR), and wrapper to $(BINDIR)/toralize"
 
 # Remove installed files
 uninstall:
 	@echo "Removing installed files from $(PREFIX)..."
 	rm -f $(DESTDIR)$(BINDIR)/toralize
+	rm -f $(DESTDIR)$(BINDIR)/toralizer.so
 	rm -rf $(DESTDIR)$(LIBDIR)
 	@echo "Uninstalled."
 

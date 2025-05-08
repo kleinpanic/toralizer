@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Global toralize script
-export LD_PRELOAD="/usr/local/share/toralizer/toralizer.so"
-exec "$@"
